@@ -16,7 +16,6 @@ public class UserController {
     // http://localhost:8080/oauth/callback?code=3u9fk
     @GetMapping("/oauth/callback")
     public String oauthCallback(String code){
-        //System.out.println("콜백됨! : "+code);
         System.out.println("kakao call back code : "+code);
         User sessionUser = userService.카카오로그인(code);
         session.setAttribute("sessionUser", sessionUser);
